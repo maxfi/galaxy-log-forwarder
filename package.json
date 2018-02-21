@@ -1,0 +1,32 @@
+{
+  "name": "galaxy-log-forwarder",
+  "version": "0.1.0",
+  "description": "A microservice that accepts Meteor Galaxy Elasticsearch logs and forwards them as simple JSON to your endpoint of choice",
+  "repository": "https://github.com/maxfi/galaxy-log-forwarder",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev"
+  },
+  "author": "maxfi",
+  "license": "",
+  "engines": {
+    "node": ">=8"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "meteor",
+    "galaxy",
+    "logging"
+  ],
+  "dependencies": {
+    "micro": "^9.1.0",
+    "micro-post": "^1.0.0",
+    "node-fetch": "^2.0.0"
+  },
+  "devDependencies": {
+    "micro-dev": "^2.2.0"
+  }
+}
