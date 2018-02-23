@@ -1,6 +1,8 @@
-const { text } = require('micro')
+const { text, createError } = require('micro')
 const post = require('micro-post')
 const fetch = require('node-fetch')
+
+const { TOKEN } = process.env
 
 /**
  * @summary Encodes string in base64
@@ -50,7 +52,9 @@ const parse = async req => {
 
 module.exports = post(async req => {
   const data = getData(req)
-  if (!data.forwardUrl) throw new Error('Forwarding URL must be provided')
+  const authorized = !TOKEN || TOKEN === data.token
+  if (!authorized) throw createError(401, 'Unauthorized')
+  if (!data.forwardUrl) throw createError(400, 'Forwarding URL must be provided')
 
   const parsed = await parse(req)
   const response = await fetch(data.forwardUrl, {

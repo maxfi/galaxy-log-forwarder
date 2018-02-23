@@ -16,7 +16,7 @@ But what if you don't want to setup, configure and maintain and Elasticsearch se
 1. Run this package somewhere that is accessible to the internet.
 
 ```sh
-npm start
+TOKEN={{API_TOKEN}} npm start
 ```
 
 2. Base64 encode the URL to forward galaxy logs to: 
@@ -37,6 +37,6 @@ echo "https://some-logging-service.com" | base64
 }
 ```
 
-* `TOKEN`       : This is not currently used. Can be set to anything.
+* `TOKEN`       : API token. If not set as environment variable then it is ignored.
 * `FORWARD_URL` : Base64 encoded URL from step 2.
 * `ADDRESS`     : Public URL of where this service is running.
