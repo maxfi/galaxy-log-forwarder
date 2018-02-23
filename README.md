@@ -1,6 +1,6 @@
 # galaxy-log-forwarder
 
-> A microservice that accepts Meteor Galaxy Elasticsearch logs and forwards them as simple JSON to your endpoint of choice.
+> A microservice that accepts Meteor Galaxy Elasticsearch logs and forwards them as NDJSON to your endpoint of choice
 
 ## Why?
 
