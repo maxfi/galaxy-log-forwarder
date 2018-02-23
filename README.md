@@ -22,7 +22,7 @@ TOKEN={{API_TOKEN}} npm start
 2. Base64 encode the URL to forward galaxy logs to: 
 
 ```sh
-echo "https://some-logging-service.com" | base64
+echo -n "https://some-logging-service.com" | base64
 ```
 
 3. Add the `USER_LOG_DESTINATION` environment variable to your meteor `settings.json` file:
